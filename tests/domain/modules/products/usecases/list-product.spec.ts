@@ -1,11 +1,10 @@
-import { ListProductsUseCase } from '@/modules/products/usecases/'
-import { IListAllProductRepository } from '@/modules/products/ports'
+import { ListProductsUseCase } from '@/domain/modules/products/usecases/'
+import { IListAllProductRepository } from '@/domain/modules/products/ports'
 
 import { mock, MockProxy } from 'jest-mock-extended'
-import { InternalServerError } from '@/modules/core/errors'
+import { InternalServerError } from '@/domain/modules/core/errors'
 
 describe('ListProductUseCase', () => {
-  // let listProductUseCase: MockProxy<ListProductsUseCase>
   let listProductsRepo: MockProxy<IListAllProductRepository>
   let sut: ListProductsUseCase
 

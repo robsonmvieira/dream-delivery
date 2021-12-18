@@ -1,4 +1,4 @@
-import { Entity } from '@/modules/core/base-classes'
+import { Entity } from '@/domain/modules/core/base-classes'
 
 export class Product extends Entity {
   sku: string
