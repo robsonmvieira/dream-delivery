@@ -1,32 +1,12 @@
+import { ListProductController } from '@/application/controllers'
 import { InternalServerError } from '@/domain/modules/core/errors'
 import { IListAllProductRepository } from '@/domain/modules/products/ports'
+
 import { mock, MockProxy } from 'jest-mock-extended'
 
-class ProductController {
-  constructor (private readonly listAllProductRepository: IListAllProductRepository) {}
-  async handler (): Promise<HttpResponse> {
-    const response = await this.listAllProductRepository.list()
-
-    if (response instanceof InternalServerError) {
-      return {
-        statusCode: 500,
-        data: new InternalServerError('Something went wrong. Try again later')
-      }
-    }
-    return {
-      statusCode: 200,
-      data: response
-    }
-  }
-}
-
-export type HttpResponse = {
-  statusCode: number
-  data: any
-}
 describe('ProductController', () => {
   let repo: MockProxy<IListAllProductRepository>
-  let sut: ProductController
+  let sut: ListProductController
 
   beforeEach(() => {
     repo = mock()
@@ -39,7 +19,7 @@ describe('ProductController', () => {
       categoryId: '1',
       sku: '23651'
     }])
-    sut = new ProductController(repo)
+    sut = new ListProductController(repo)
   })
 
   it('should return of ProductResponse', async () => {
