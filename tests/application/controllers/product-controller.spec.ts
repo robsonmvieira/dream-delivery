@@ -10,6 +10,8 @@ describe('ProductController', () => {
 
   beforeEach(() => {
     repo = mock()
+    sut = new ListProductController(repo)
+
     repo.list.mockResolvedValue([{
       id: '1',
       name: 'Maça verde',
@@ -19,7 +21,6 @@ describe('ProductController', () => {
       categoryId: '1',
       sku: '23651'
     }])
-    sut = new ListProductController(repo)
   })
 
   it('should return of ProductResponse', async () => {
@@ -38,7 +39,6 @@ describe('ProductController', () => {
         sku: '23651'
       }]
     }
-    expect(response.data.length).toBe(1)
     expect(response).toEqual(expectResponse)
   })
 

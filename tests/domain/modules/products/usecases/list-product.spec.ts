@@ -24,7 +24,15 @@ describe('ListProductUseCase', () => {
   })
   it('should call IListAllProductRepository to load products', async () => {
     const result = await sut.perform()
-    expect(result.length).toBe(1)
+    expect(result).toEqual([{
+      id: '1',
+      name: 'Maça verde',
+      description: 'Pura maça argentina',
+      price: 14.5,
+      category: 'frutas',
+      categoryId: '1',
+      sku: '23651'
+    }])
     expect(sut.perform)
   })
 
