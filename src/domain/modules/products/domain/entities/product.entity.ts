@@ -1,4 +1,5 @@
 import { Entity } from '@/domain/modules/core/base-classes'
+import { ID } from '@/domain/modules/core/value-objects'
 
 export class Product extends Entity {
   sku: string
@@ -12,7 +13,16 @@ export class Product extends Entity {
     super()
 
     if (data !== undefined) {
-      Object.assign(this, data)
+      const id = ID.generate()
+
+      if (this.isValidateId(id)) {
+        this.id = id
+        Object.assign(this, data)
+      }
     }
+  }
+
+  private isValidateId (newId: string): boolean {
+    return ID.validate(newId)
   }
 }
