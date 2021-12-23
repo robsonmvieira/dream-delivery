@@ -5,4 +5,5 @@ export enum ErrorCodes {
   notFound = 'GENERIC.NOT_FOUND',
   conflict = 'GENERIC.CONFLICT',
   internalErrorServerError = 'GENERIC.INTERNAL_ERROR',
+  badRequest = 'GENERIC.BAD_REQUEST',
 }
