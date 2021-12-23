@@ -1,0 +1,8 @@
+// import moduleName from '@';
+// import { ListProductsUseCase } from '@/domain/modules/products/usecases'
+// import { listProductRepositoryFactory } from '@/infrastructure/factories/repositories/products/prisma/typeorm-list-product.factory'
+export const createProductControllerFactory = (): CreateProductController => {
+  // const repo = listProductRepositoryFactory()
+  // const useCase = new ListProductsUseCase(repo)
+  return new CreateProductController()
+}
