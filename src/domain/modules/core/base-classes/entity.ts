@@ -1,3 +1,7 @@
 export abstract class Entity {
-  id: string
+  protected id: string
+
+  public getid (): string {
+    return this.id
+  }
 }
