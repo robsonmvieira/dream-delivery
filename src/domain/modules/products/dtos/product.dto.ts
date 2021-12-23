@@ -3,4 +3,7 @@ export type ProductDTO = {
   sku: string
   category: string
   categoryId: string
+  id: string
+  name: string
+  description: string
 }
