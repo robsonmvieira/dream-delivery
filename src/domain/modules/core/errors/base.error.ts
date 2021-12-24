@@ -18,7 +18,7 @@ export abstract class ErrorBase extends Error {
     return {
       message: this.message,
       code: this.code,
-      stack: this.stack,
+      // stack: this.stack,
       metadata: this.metadata
     }
   }
