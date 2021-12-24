@@ -1,4 +1,5 @@
-import { v4 as uuidV4, validate } from 'uuid'
+import { v4 as uuidV4, validate as uuidValidate } from 'uuid'
+
 export class ID {
   protected value: string
 
@@ -7,6 +8,6 @@ export class ID {
   }
 
   static validate (uuid: string): boolean {
-    return validate(uuid)
+    return uuidValidate(uuid)
   }
 }

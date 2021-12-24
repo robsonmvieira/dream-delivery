@@ -1,9 +1,9 @@
 export enum ErrorCodes {
-  argumentInvalid = 'GENERIC.ARGUMENT_INVALID',
+  argumentInvalid = 'Invalid Argument',
   argumentOutOfRange = 'GENERIC.ARGUMENT_OUT_OF_RANGE',
   argumentNotProvided = 'GENERIC.ARGUMENT_NOT_PROVIDED',
-  notFound = 'GENERIC.NOT_FOUND',
+  notFound = 'Not Found',
   conflict = 'GENERIC.CONFLICT',
   internalErrorServerError = 'GENERIC.INTERNAL_ERROR',
-  badRequest = 'GENERIC.BAD_REQUEST',
+  badRequest = 'Bad Request',
 }
