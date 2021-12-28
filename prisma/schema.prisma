@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Product {
-  id String @id() @default(uuid())
+  id String @id()
 
   name String
 
@@ -21,4 +21,50 @@ model Product {
   categoryId String
 
   sku String
+}
+
+model Supplier {
+  id String @id()
+
+  CNPJ String
+
+  address Address?
+
+  email String
+
+  code String
+
+  phone String
+
+  isActive Boolean
+
+  isBlocked Boolean
+
+  isDeleted Boolean
+
+
+}
+
+model Address {
+  id String @id()
+
+  street String?
+
+  number String?
+
+  ZipCode String?
+
+  city String?
+
+  neighborhood String?
+
+  state String?
+
+  moreInfo String?
+
+  supplier Supplier @relation(fields: [supplierId], references: [id])
+
+  supplierId String
+
+
 }
