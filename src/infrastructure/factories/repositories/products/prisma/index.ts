@@ -1,2 +1,2 @@
-export * from './create-product.factory'
-export * from './typeorm-list-product.factory'
+export * from './create-product.prisma.factory'
+export * from './list-product.prisma.factory'
