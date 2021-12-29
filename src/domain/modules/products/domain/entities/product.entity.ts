@@ -22,7 +22,7 @@ export class Product extends Entity {
     }
   }
 
-  private isValidateId (newId: string): boolean {
-    return ID.validate(newId)
-  }
+  // private isValidateId (newId: string): boolean {
+  //   return ID.validate(newId)
+  // }
 }
