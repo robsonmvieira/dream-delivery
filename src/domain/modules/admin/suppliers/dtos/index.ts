@@ -1,1 +1,1 @@
-export * from './supplayer.response'
+export * from './supplier.response'
