@@ -1,1 +1,2 @@
-export * from './list-supplayers.usecase'
+export * from './list-suppliers.usecase'
+export * from './create-supplier.usecase'
