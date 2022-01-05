@@ -2,6 +2,7 @@ import { Entity } from '@/domain/modules/core/base-classes'
 import { ID, Address, Email } from '@/domain/modules/core/value-objects'
 
 export class Supplier extends Entity {
+  private name: string
   private CNPJ: string
   private readonly address: Address
   private email: Email
@@ -52,6 +53,11 @@ export class Supplier extends Entity {
 
   setDeleted (value: boolean): void {
     this.isDeleted = value
+  }
+
+  getName (): string { return this.name }
+  setName (value: string): void {
+    this.name = value
   }
 
   getIsDeleted (): boolean { return this.isDeleted }

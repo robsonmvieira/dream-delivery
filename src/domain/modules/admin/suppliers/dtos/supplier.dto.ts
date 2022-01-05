@@ -1,13 +1,6 @@
-export class SupplierResponse {
-  id: string
-  CNPJ: string
+export type SupplierDTO = {
   name: string
-  email: string
-  code: string
-  phone: string
-  isActive: boolean
-  isBlocked: boolean
-  isDeleted: boolean
+  CNPJ: string
   address: {
     street: string
     number: string
@@ -17,4 +10,8 @@ export class SupplierResponse {
     state: string
     moreInfo?: string
   }
+
+  email: string
+  code: string
+  phone: string
 }
