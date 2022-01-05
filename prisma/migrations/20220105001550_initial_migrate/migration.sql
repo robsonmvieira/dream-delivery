@@ -14,6 +14,7 @@ CREATE TABLE "Product" (
 -- CreateTable
 CREATE TABLE "Supplier" (
     "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
     "CNPJ" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "code" TEXT NOT NULL,
@@ -30,7 +31,7 @@ CREATE TABLE "Address" (
     "id" TEXT NOT NULL,
     "street" TEXT,
     "number" TEXT,
-    "ZipCode" TEXT,
+    "zipCode" TEXT,
     "city" TEXT,
     "neighborhood" TEXT,
     "state" TEXT,
@@ -39,6 +40,18 @@ CREATE TABLE "Address" (
 
     CONSTRAINT "Address_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Supplier_name_key" ON "Supplier"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Supplier_CNPJ_key" ON "Supplier"("CNPJ");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Supplier_email_key" ON "Supplier"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Supplier_code_key" ON "Supplier"("code");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Address_supplierId_key" ON "Address"("supplierId");

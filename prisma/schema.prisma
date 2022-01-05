@@ -26,13 +26,15 @@ model Product {
 model Supplier {
   id String @id()
 
-  CNPJ String
+  name String @unique
+
+  CNPJ String @unique
 
   address Address?
 
-  email String
+  email String @unique
 
-  code String
+  code String @unique
 
   phone String
 
@@ -52,7 +54,7 @@ model Address {
 
   number String?
 
-  ZipCode String?
+  zipCode String?
 
   city String?
 
