@@ -1,7 +1,7 @@
 export class Address {
   street: string
   number: string
-  ZipCode: string
+  zipCode: string
   city: string
   neighborhood: string
   state: string
