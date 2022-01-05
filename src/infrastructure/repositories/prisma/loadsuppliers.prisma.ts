@@ -18,8 +18,7 @@ export class ListAllSuppliersPrismaRepository implements IListSuppliersRepositor
           address: true
         }
       })
-      const result = initialData.map(supplier => SupplierMapper.fromPrismaDataBaseToResponse(supplier))
-      return result
+      return initialData.map(supplier => SupplierMapper.fromPrismaDataBaseToResponse(supplier))
     } catch (error) {
       return new InternalServerError('Something went wrong. Try again later')
     }

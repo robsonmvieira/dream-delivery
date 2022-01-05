@@ -1,9 +1,9 @@
 
 import { ListSupplierController } from '@/application/controllers/suppliers'
-import { listSupplayerUseCaseFactory } from '@/infrastructure/factories/usecases/'
+import { listSuppliersUseCaseFactory } from '@/infrastructure/factories/usecases/'
 
 export const listSupplierControllerFactory = (): ListSupplierController => {
-  const useCase = listSupplayerUseCaseFactory()
+  const useCase = listSuppliersUseCaseFactory()
 
   return new ListSupplierController(useCase)
 }
