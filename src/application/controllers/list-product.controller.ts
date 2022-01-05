@@ -6,6 +6,6 @@ export class ListProductController {
 
   async handler (req: Request, res: Response): Promise<Response> {
     const response = await this.useCase.perform()
-    return res.status(200).json({ data: response })
+    return res.status(200).json(response)
   }
 }
