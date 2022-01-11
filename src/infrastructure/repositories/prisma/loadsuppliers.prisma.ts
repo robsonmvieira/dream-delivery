@@ -14,6 +14,9 @@ export class ListAllSuppliersPrismaRepository implements IListSuppliersRepositor
   async listSuppliers (): Promise<SupplierResponse[] | InternalServerError> {
     try {
       const initialData = await this.prisma.supplier.findMany({
+        where: {
+          isDeleted: false
+        },
         include: {
           address: true
         }
