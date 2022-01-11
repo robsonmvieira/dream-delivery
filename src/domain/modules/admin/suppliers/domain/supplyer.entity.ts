@@ -20,6 +20,7 @@ export class Supplier extends Entity {
     if (this.isValidateId(id)) {
       this.id = id
       Object.assign(this, data)
+      this.code = String(Math.floor(Math.random() * 100003))
       this.email = new Email(data.email)
       this.address = new Address(data.address)
     }
